@@ -19,21 +19,24 @@ const WelcomePage = () => {
          <img src={logo} alt="logo" className="logo-sushi"/>
          <h1 className="title">SUSHI<br></br>QUEEN</h1>
            <div className="buttons-container">
-              <button className="welcome-page-client-button"><Link to="/cliente">CLIENTE</Link></button>
-              <button className="welcome-page-kitchen-button"><Link to="/cocina">COCINA</Link></button>
+           <Link to="/cliente"><button className="welcome-page-client-button">CLIENTE</button></Link>
+           <Link to="/cocina"><button className="welcome-page-kitchen-button">COCINA</button></Link>
            </div>
       </div>
     </div>
     <Switch>
-          <Route path="/cliente">
+          <Route exact path="/cliente">
             <ClientPage/>
           </Route>
-          <Route path="/cocina">
+          <Route exact path="/cocina">
             <KitchenPage />
           </Route>
     </Switch>
-    </Router>
+
+    </Router>   
   );
+
 }
+
 
 export default WelcomePage;
