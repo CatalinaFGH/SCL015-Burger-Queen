@@ -1,4 +1,4 @@
-import logo from './HomeImages/logosushi.jpg';
+import logo from '../Images/logosushi.jpg';
 
 function Home() {
     return (

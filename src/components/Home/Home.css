@@ -9,7 +9,7 @@ shojo #FF3D00
 
 @media screen and (min-width:415px) and (max-width:800px) and (orientation: portrait){
 .welcome-page-container{
-background-image: url(./HomeImages/fondo.svg);
+background-image: url(../Images/fondo.svg);
 background-repeat: no-repeat;
 width:100vw;
 height: 100vh;
