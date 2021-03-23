@@ -1,15 +1,15 @@
-import './WelcomePage.css';
+import './Home/Home.css';
 import React from "react";
-import ClientPage from '../Clients/Client';
-import Home from './Home';
-import KitchenPage from '../Kitchen/Kitchen';
+import ClientPage from './Clients/Client';
+import Home from './Home/Home';
+import KitchenPage from './Kitchen/Kitchen';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
 
-const WelcomePage = () => {
+const TheRouter = () => {
   return (
     <Router>
 
@@ -31,4 +31,4 @@ const WelcomePage = () => {
 }
 
 
-export default WelcomePage;
+export default TheRouter;
