@@ -103,7 +103,7 @@
 .printed-order-container{
     background-color: #fff;
     width: 40vw;
-    height: 80vh;
+    height: 84vh;
     margin-top: 3vh;
     display: flex;
     flex-direction: column;
@@ -180,6 +180,7 @@
     padding: 10px;
     border: none;
     margin-top: 1vh;
+    margin-bottom: 1.5vh;
 }
 
 p{
@@ -194,5 +195,5 @@ p{
 }
 
 .order-container{
-    margin: 15vh;
+    margin-bottom: 33vh;
 }
