@@ -70,10 +70,23 @@ font-size: 1.8vh;
     justify-content: center;
 }
 
+.order-header-title{
+ font-family:"Roboto";
+ font-size:30px;
+ letter-spacing: 0.25em;
+}
 
-
-
-
+.order-header-container{
+    margin-top: 3vh;
+    background-color: white;
+    border-radius: 2vw;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    height: 7vh;
+    align-items: center;
+    margin-left: 3vw;
+}
 
 
 }
