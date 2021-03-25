@@ -16,10 +16,12 @@ height: 100vh;
 background-position: center;
 background-size: cover;
 color: #ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .logo-sushi{
-    margin-top:8vh;
     border-radius: 100%;
     height:45vh;
 }
