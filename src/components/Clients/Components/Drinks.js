@@ -1,8 +1,6 @@
 const Drinks = () =>{
     return(
-    <>
-    <h2>bebeme 1313</h2>
-    </>
+    <span className="selectFoodItemBtn">Bebidas</span>
     )
 }
 

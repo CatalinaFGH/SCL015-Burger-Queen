@@ -1,8 +1,6 @@
 const Appetizers = () =>{
     return(
-    <>
-    <h2>Una entradita 1313</h2>
-    </>
+    <span className="selectFoodItemBtn">Aperitivos</span>
     )
 }
 

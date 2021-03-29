@@ -91,6 +91,27 @@
     border: 4px solid #F4900C;
 }
 
+.selectFoodItemBtn{
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    width: 25vw;
+    text-align: center;
+    padding: 5%;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 2.2vh;
+    line-height: 28px;
+    margin: 0vh 0vw 2vh 2vw;
+    outline: none;
+    justify-content: center;
+}
+
+.selectFoodItemBtn:hover{
+    cursor:pointer;
+    background-color: #F4900C;
+}
 
 .clientTitle{
     color: #fff;
@@ -194,6 +215,9 @@ p{
     background-color: #000000;
 }
 
-.order-container{
-    margin-bottom: 33vh;
+.orderList{
+    height: 30vh;
 }
+/* .order-container{
+    margin-bottom: 33vh;
+} */
