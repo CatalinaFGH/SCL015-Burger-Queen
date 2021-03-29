@@ -1,8 +1,6 @@
 const Breakfast = () =>{
     return(
-    
-    <h2>Desayuno</h2>
-    
+    <span className="selectFoodItemBtn">Comida de desayuno</span>
     )
 }
 
