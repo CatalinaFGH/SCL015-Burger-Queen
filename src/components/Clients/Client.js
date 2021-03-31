@@ -12,6 +12,10 @@ const ClientPage = () => {
   
   const [menu, setMenu] = useState('');
   const [orderList, setOrderList] = useState([]);
+  
+  let total = 0;
+  orderList.map(item=>(total += item.price));
+
 
 const DisplayFunction = () =>{
 if (menu === 'BreakfastFood') {
@@ -81,7 +85,7 @@ else return ' ' ;
             </ul>
             <div>
               <hr className="black-line"></hr>
-              <p>TOTAL:</p>
+              <p>{<p>TOTAL:{total}</p>}</p>
               <hr className="black-line"></hr>
             </div>
             <div className="printed-order-buttons-container">
