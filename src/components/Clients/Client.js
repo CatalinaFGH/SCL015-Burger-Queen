@@ -1,36 +1,29 @@
 import "./Client.css";
 import logo from "../Images/logosushi.jpg";
 import React, { useState } from "react";
-// import Breakfast from './Components/Breakfast';
-// import LunchAndDinner from './Components/LunchAndDinner';
-// import Drinks from './Components/Drinks';
-// import Appetizers from './Components/Appetizers'
+import Breakfast from './Components/Breakfast';
+import LunchAndDinner from './Components/LunchAndDinner';
+import Drinks from './Components/Drinks';
+import Appetizers from './Components/Appetizers';
 
-const useOrderList = () => {
-  const [orderList, setOrderList] = useState([]);
- 
-  const addItem = (comida) => {
-    console.log(orderList);
-    setOrderList(orderList.concat({
-      id: orderList.length,
-      name: comida.nombre,
-    }));
-  }
-return { orderList, addItem }
-}
 
 
 const ClientPage = () => {
   
   const [menu, setMenu] = useState('');
-  const { orderList, addItem } = useOrderList([]);
+  const [orderList, setOrderList] = useState([]);
 
-  let clase = '';
-  if(menu===''){
-    clase = '';
-  }
-
-  else(clase = 'selectFoodItemBtn');
+const DisplayFunction = () =>{
+if (menu === 'BreakfastFood') {
+return <Breakfast orderList={orderList} setOrderList={setOrderList}/>}
+else if (menu === 'LunchAndDinnerFood'){
+return <LunchAndDinner orderList={orderList} setOrderList={setOrderList}/>}
+else if (menu === 'Appetizers'){
+  return <Appetizers orderList={orderList} setOrderList={setOrderList}/>}
+else if (menu === 'Drinks'){
+  return <Drinks orderList={orderList} setOrderList={setOrderList}/>}
+else return ' ' ;
+};
 
   return (
     <div className="clientPageContainer">
@@ -49,19 +42,18 @@ const ClientPage = () => {
       <div className="clientPageContent">
         <div className="menu-buttons-container">
                 <div className="menu-buttons">
-                <button onClick={()=> setMenu('Sandwich jamón y queso $1000')} className="menuOptionsBtn">
+                <button onClick={()=>{setMenu('BreakfastFood')}} className="menuOptionsBtn">
                   Desayuno
                 </button>
-                <button onClick={()=>setMenu('Sushi de salmón $3000')} className="menuOptionsBtn">
+                 <button onClick={()=>setMenu('LunchAndDinnerFood')} className="menuOptionsBtn">
                   Almuerzo y cena
                 </button>
               </div>
               <div>
-                <button onClick={()=>setMenu('Sprite 500ml $1500')} className="menuOptionsBtn">Líquidos</button>
-                <button onClick={()=>setMenu('Gyozas $3000')} className="menuOptionsBtn">Aperitivos</button>
-              </div>
-              <br />
-              <span onClick={() => addItem({nombre:menu})} className={clase}>{menu}</span>
+                <button onClick={()=>setMenu('Drinks')} className="menuOptionsBtn">Líquidos</button>
+                <button onClick={()=>setMenu('Appetizers')} className="menuOptionsBtn">Aperitivos</button>
+              </div> 
+              <br />{DisplayFunction()}
         </div>
         <div className="printed-order-container">
           <aside className="clientPageAside">
@@ -82,9 +74,9 @@ const ClientPage = () => {
               <p>PEDIDO</p>
               <hr className="black-line"></hr>
             </div>
-            <ul>
+            <ul className="orderList">
               {orderList.map(item=>(
-              <p key={item.id}>{item.name}</p>
+              <p key={item.id}>{item.name + ' $' + item.price}</p>
             ))}
             </ul>
             <div>

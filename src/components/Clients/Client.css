@@ -216,7 +216,8 @@ p{
 }
 
 .orderList{
-    height: 30vh;
+    height: 32vh;
+    overflow-y: scroll;
 }
 /* .order-container{
     margin-bottom: 33vh;
