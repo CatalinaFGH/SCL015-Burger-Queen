@@ -57,22 +57,27 @@ else return ' ' ;
                 <button onClick={()=>setMenu('Drinks')} className="menuOptionsBtn">Líquidos</button>
                 <button onClick={()=>setMenu('Appetizers')} className="menuOptionsBtn">Aperitivos</button>
               </div> 
-              <br />{DisplayFunction()}
+              <br />
+              <div className="foodBtnsContainer">
+              {DisplayFunction()}
+              </div>
         </div>
         <div className="printed-order-container">
           <aside className="clientPageAside">
+            <div className="nameAndTableContainer">
             <p>NOMBRE:</p>
             <input
               type="text"
-              placeholder="Ingrese nombre"
+              placeholder="Nombre de cliente"
               className="client-name-input"
             />
             <p className="tableTitle">MESA:</p>
             <input
               type="text"
-              placeholder="Ingrese mesa"
+              placeholder="N° Mesa"
               className="table-number-input"
             />
+            </div>
             <div className="order-container">
               <hr className="black-line"></hr>
               <p>PEDIDO</p>
@@ -85,7 +90,7 @@ else return ' ' ;
             </ul>
             <div>
               <hr className="black-line"></hr>
-              <p>{<p>TOTAL:{total}</p>}</p>
+              <p>{'TOTAL: $' + total}</p>
               <hr className="black-line"></hr>
             </div>
             <div className="printed-order-buttons-container">

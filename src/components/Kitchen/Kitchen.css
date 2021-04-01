@@ -1,8 +1,90 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+ /* Formato para desktop */
+.kitchen-page-container{
+    background-image: url(../Images/fondo.svg);
+    background-repeat: no-repeat;
+    width:100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    
+    }
+    
+    .kitchen-page-logo-sushi{
+        height: 15vh;
+        width: 10vw;
+        border-radius: 100%;
+    }
+    
+    .headerKitchenPage{
+        height: 10vh;
+        background-color: #F4900C;
+    }
+    
+    .headerClientPage{
+        display: flex;
+        height: 10vh;
+        background-color: #F4900C;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0vh 4vw 0vh 4vw;
+        text-decoration: none;
+    }
+    
+  .logoHeader{
+        width: 3.5vw;
+        border-radius: 100%;
+    }
+    
+    .logoContainer{
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logoName{
+    margin-right: 1vw;
+    letter-spacing: 0.4em;
+    font-weight: bold;
+    font-size: 1.8vh;
+    }
+    
+    .headerButton{
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        width: 30%;
+        height: 70%;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: 0.15em;
+        color: #E27A00;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .order-header-title{
+     font-family:"Roboto";
+     font-size:30px;
+     letter-spacing: 0.25em;
+    }
+    
+    .order-header-container{
+        margin-top: 3vh;
+        background-color: white;
+        border-radius: 2vw;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        height: 7vh;
+        align-items: center;
+        margin-left: 3vw;
+    }
 
+
+/* Formato para tablet */
 @media screen and (min-width:415px) and (max-width:800px) and (orientation: portrait){
 .kitchen-page-container{
 background-image: url(../Images/fondo.svg);
