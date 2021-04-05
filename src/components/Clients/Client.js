@@ -5,10 +5,14 @@ import Breakfast from './Components/Breakfast';
 import LunchAndDinner from './Components/LunchAndDinner';
 import Drinks from './Components/Drinks';
 import Appetizers from './Components/Appetizers';
+import { useFirebaseApp } from 'reactfire'; 
+
 
 
 
 const ClientPage = () => {
+  const firebase = useFirebaseApp();
+  console.log(firebase);
   
   const [menu, setMenu] = useState('');
   const [orderList, setOrderList] = useState([]);
