@@ -6,19 +6,34 @@ import LunchAndDinner from './Components/LunchAndDinner';
 import Drinks from './Components/Drinks';
 import Appetizers from './Components/Appetizers';
 import { useFirebaseApp } from 'reactfire'; 
-
-
+import 'firebase/firestore';
 
 
 const ClientPage = () => {
   const firebase = useFirebaseApp();
-  console.log(firebase);
+  // console.log(firebase);
   
   const [menu, setMenu] = useState('');
   const [orderList, setOrderList] = useState([]);
-  
+  const [name, setName] = useState('');
+  const [table, setTable] = useState('');
+    
   let total = 0;
   orderList.map(item=>(total += item.price));
+
+function addColection() {
+  firebase.firestore()
+              .collection("pedidos")
+              .add({
+                name: name,
+                table: table,
+                orderList: orderList,
+              })
+              .then(() => {
+              console.log('guardado esxitosamente')
+              }).catch(() => {console.log('no se guardo esxitosamente') })
+}
+ 
 
 
 const DisplayFunction = () =>{
@@ -74,12 +89,14 @@ else return ' ' ;
               type="text"
               placeholder="Nombre de cliente"
               className="client-name-input"
+              onChange={(ev) => setName(ev.target.value)}
             />
             <p className="tableTitle">MESA:</p>
             <input
               type="text"
               placeholder="N° Mesa"
               className="table-number-input"
+              onChange={(ev) => setTable(ev.target.value)}
             />
             </div>
             <div className="order-container">
@@ -98,7 +115,7 @@ else return ' ' ;
               <hr className="black-line"></hr>
             </div>
             <div className="printed-order-buttons-container">
-              <button className="send-order-button">ENVIAR</button>
+              <button onClick={()=> addColection()} className="send-order-button">ENVIAR</button>
               <button className="cancel-order-button">CANCELAR</button>
             </div>
           </aside>

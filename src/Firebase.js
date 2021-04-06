@@ -7,8 +7,7 @@
 //      <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
 // 
 
- 
-   export default {
+  const FirebaseConfig = {
     apiKey: "AIzaSyCLrtuzUn0LpLZ6acLPmDflB1gF7Gg0gG4",
     authDomain: "scl015-burger-queen.firebaseapp.com",
     projectId: "scl015-burger-queen",
@@ -16,4 +15,6 @@
     messagingSenderId: "260217081662",
     appId: "1:260217081662:web:9061be1ad861d25e52e66f"
   };
+
+  export default FirebaseConfig;
 
