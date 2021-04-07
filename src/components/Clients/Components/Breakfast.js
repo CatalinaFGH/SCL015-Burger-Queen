@@ -1,11 +1,12 @@
 import React, {Fragment} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 const Breakfast = ({orderList, setOrderList}) =>{
     let clase = 'selectFoodItemBtn';
 
     const addItem = (food) => {
         
         setOrderList(orderList.concat({
-          id: orderList.length,
+          id: uuidv4(),
           name: food.name,
           price: food.price,
         }));
