@@ -1,7 +1,30 @@
+import React, { useState, useEffect } from 'react'
 import logo from '../Images/logosushi.jpg'
 import './Kitchen.css'
+import { useFirebaseApp } from 'reactfire'; 
+import 'firebase/firestore';
 
 function KitchenPage() {
+const [orders, setOrders] = useState([]);
+const firebase = useFirebaseApp();
+const getOrders = async () => {
+  await firebase.firestore()
+  .collection("pedidos")
+  .onSnapshot((querySnapshot) => {
+    const docs = [];
+    querySnapshot.forEach((doc) => {
+      docs.push({...doc.data()})
+    })
+    setOrders(docs)
+  })
+}
+
+useEffect(()=>{
+  getOrders();
+}, []);
+
+
+
     return (
       <div className="kitchen-page-container">
     
@@ -19,6 +42,12 @@ function KitchenPage() {
                 PEDIDOS
               </h2>
             </div>
+            {orders.map(item=>(
+              <div className="ordersContainer">
+              <h1 key={item.id}>{item.name}</h1>
+              {item.order.map(a=>(<p>{a.name}</p>))}
+              </div>
+            ))}
           </div>
     </div>
       </div>

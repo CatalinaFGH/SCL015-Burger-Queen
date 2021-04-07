@@ -27,7 +27,7 @@ function addColection() {
               .add({
                 name: name,
                 table: table,
-                orderList: orderList,
+                order: orderList,
               })
               .then(() => {
               console.log('guardado esxitosamente')

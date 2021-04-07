@@ -83,6 +83,12 @@
         margin-left: 3vw;
     }
 
+    .ordersContainer{
+        width: 186px;
+        height: 334px;
+        background: #FF9A42;
+        border-radius: 20px;
+    }
 
 /* Formato para tablet */
 @media screen and (min-width:415px) and (max-width:800px) and (orientation: portrait){
