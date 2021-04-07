@@ -44,9 +44,9 @@ useEffect(()=>{
             </div>
             <div className="mainOrdersContainer">
                 {orders.map(item=>(
-                  <div className="ordersContainer">
+                  <div key={item.id} className="ordersContainer">
                   <h1 key={item.id}>{item.name}</h1>
-                  {item.order.map(a=>(<p>{'1x ' + a.name}</p>))}
+                  {item.order.map(a=>(<p key={a.id}>{'1x ' + a.name}</p>))}
                   <button className="orderButton">Listo</button>
                   </div>
                 ))}

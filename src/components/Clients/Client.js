@@ -7,6 +7,7 @@ import Drinks from './Components/Drinks';
 import Appetizers from './Components/Appetizers';
 import { useFirebaseApp } from 'reactfire'; 
 import 'firebase/firestore';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const ClientPage = () => {
@@ -28,6 +29,7 @@ function addColection() {
                 name: name,
                 table: table,
                 order: orderList,
+                id: uuidv4(),
               })
               .then(() => {
               console.log('guardado esxitosamente')
