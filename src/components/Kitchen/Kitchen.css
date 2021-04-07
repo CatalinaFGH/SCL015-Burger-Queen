@@ -83,6 +83,23 @@
         margin-left: 3vw;
     }
 
+    .mainOrdersContainer{
+        display: flex;
+        height: 78vh;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+    }
+
+    .ordersContainer{
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        margin: 2vh 1vw 2vh 1vw;
+        align-items: center;
+        width: 18vw;
+        background: #FF9A42;
+        border-radius: 20px;
+    }
 
 /* Formato para tablet */
 @media screen and (min-width:415px) and (max-width:800px) and (orientation: portrait){
