@@ -13,10 +13,19 @@ const getOrders = async () => {
   .onSnapshot((querySnapshot) => {
     const docs = [];
     querySnapshot.forEach((doc) => {
-      docs.push({...doc.data()})
+      docs.push({...doc.data(), id: doc.id})
     })
     setOrders(docs)
   })
+}
+
+
+const deleteItem = async (id) =>{
+  if (window.confirm("estas seguro que deseas eliminar el pedido?")) {
+    await firebase.firestore()
+    .collection("pedidos").doc(id).delete();
+    console.log("pedido eliminado")
+  }
 }
 
 useEffect(()=>{
@@ -45,9 +54,9 @@ useEffect(()=>{
             <div className="mainOrdersContainer">
                 {orders.map(item=>(
                   <div key={item.id} className="ordersContainer">
-                  <h1 key={item.id}>{item.name}</h1>
+                  <h1 key={item.id} className="display-flex">{item.name}</h1>
                   {item.order.map(a=>(<p key={a.id}>{'1x ' + a.name}</p>))}
-                  <button className="orderButton">Listo</button>
+                  <button className="orderButton" onClick={()=>{deleteItem(item.id)}}>Listo</button>
                   </div>
                 ))}
             </div>
